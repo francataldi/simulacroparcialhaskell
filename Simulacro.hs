@@ -58,11 +58,15 @@ asegura: {res tiene exactamente los elementos que figuran en alguna tupla de rel
 -- personas [("franco","manuel"),("franco","juan"),("mariano","marcos")] = ["franco","manuel","juan","mariano","marcos"]
 
 -- EJERCICIO 3 --
---amigosDe :: String -> [String,String] -> [String]
---amigosDe
+amigosDe :: String -> [(String,String)] -> [String]
+amigosDe x [] = []
+amigosDe x ((a,b) : xs) | x == a = b : amigosDe x xs
+                        | x == b = a : amigosDe x xs
+                        | otherwise = amigosDe x xs
 
+-- tengo que devoler una lista con mis maigos, pero sibn mi nombreç
+-- amigosDe franco [("franco",manuel)(mnartina,pepe)(julio,frabnci)] = ["Manuel","Julio"]
 
---amigosDe franco []
 
 
 
